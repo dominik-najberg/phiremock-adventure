@@ -1,0 +1,10 @@
+actor: ApiTester
+modules:
+    enabled:
+        -   Phiremock:
+                resetBeforeEachTest: false # if set to true, executes `$I->haveACleanSetupInRemoteService` before each test.
+        -   REST:
+                url: http://127.0.0.1:18080
+                depends: PhpBrowser
+                part: Json
+        - \App\Tests\Helper\Api
